@@ -5,8 +5,8 @@ services:
 before_install:
   - docker build -t bnk007/react-test -f ./client/Dockerfile.dev ./client
 
-  script:
-    - docker run -e CI=true bnk007/react-test npm test
+script:
+  - docker run -e CI=true bnk007/react-test npm test
 
 after_success:
   - docker build -t bnk007/multi-client ./client
